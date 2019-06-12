@@ -1,28 +1,26 @@
 #!/usr/bin/env python
 # coding: utf-8
-
-# In[26]:
-
-
-# Step-1. Load libraries and data
+#
 import matplotlib.pyplot as plt
 import pandas as pd
 from math import pi
 import seaborn as sns
 import numpy as np
 import os
+#
 os.chdir('/Users/pauline/Documents/Python')
 df = pd.read_csv("Tab-Morph.csv")
-#df.head(5)
-
-# Step-2.  We want to show 6 different variables on our radar chart, so take them out and set as a np.array. 
+#
+# show 6 different variables on our radar chart, so take them out and set as a np.array.
 labels=np.array(['Median', 'Max', '1stQ', '3rdQ', 'Min', 'Mean'])
 stats=df.loc[1, labels].values
-# Step-3. close the plot
+#
+# close the plot
 angles=np.linspace(0, 2*np.pi, len(labels), endpoint=False)
 stats=np.concatenate((stats,[stats[0]]))
 angles=np.concatenate((angles,[angles[0]]))
-# Step-4
+#
+# plotting
 fig = plt.figure()
 ax = fig.add_subplot(111, polar=True)
 ax.plot(angles, stats, 'o-', linewidth=2)
@@ -35,16 +33,15 @@ plt.title('Radar chart for the Mariana Trench \nStatistics on bathymetric profil
 ax.grid(True)
 ax.annotate('(A)', fontsize=18, xy=(1.02, .90), xycoords="axes fraction")
 plt.show()
-
-
-# Step-2. Show 6 different variables on our radar chart, so take them out and set as a np.array. 
-labels=np.array(['Median', 'Max', '1stQ', '3rdQ', 'Min', 'Mean'])
+#
+# show 6 different variables on our radar chart, so take them out and set as a np.array.
 stats=df.loc[5, labels].values
-# Step-3. close the plot
+#
+# close the plot
 angles=np.linspace(0, 2*np.pi, len(labels), endpoint=False)
 stats=np.concatenate((stats,[stats[0]]))
 angles=np.concatenate((angles,[angles[0]]))
-# Step-4
+#
 fig = plt.figure()
 ax = fig.add_subplot(111, polar=True)
 ax.plot(angles, stats, 'o-', linewidth=2)
@@ -57,15 +54,15 @@ plt.title('Radar chart for the Mariana Trench \nStatistics on bathymetric profil
 ax.grid(True)
 ax.annotate('(D)', fontsize=18, xy=(1.02, .90), xycoords="axes fraction")
 plt.show()
-
-# Step-2. Show 6 different variables on our radar chart, so take them out and set as a np.array. 
-labels=np.array(['Median', 'Max', '1stQ', '3rdQ', 'Min', 'Mean'])
+#
+# show 6 different variables on our radar chart, so take them out and set as a np.array.
 stats=df.loc[12, labels].values
-# Step-3. close the plot
+#
+# close the plot
 angles=np.linspace(0, 2*np.pi, len(labels), endpoint=False)
 stats=np.concatenate((stats,[stats[0]]))
 angles=np.concatenate((angles,[angles[0]]))
-# Step-4
+#
 fig = plt.figure()
 ax = fig.add_subplot(111, polar=True)
 ax.plot(angles, stats, 'o-', linewidth=2)
@@ -78,15 +75,15 @@ plt.title('Radar chart for the Mariana Trench \nStatistics on bathymetric profil
 ax.grid(True)
 ax.annotate('(B)', fontsize=18, xy=(1.02, .90), xycoords="axes fraction")
 plt.show()
-
-# Step-2. Show 6 different variables on our radar chart, so take them out and set as a np.array.
-labels=np.array(['Median', 'Max', '1stQ', '3rdQ', 'Min', 'Mean'])
+#
+# Show 6 different variables on our radar chart, so take them out and set as a np.array.
 stats=df.loc[15, labels].values
+#
 # Step-3. close the plot
 angles=np.linspace(0, 2*np.pi, len(labels), endpoint=False)
 stats=np.concatenate((stats,[stats[0]]))
 angles=np.concatenate((angles,[angles[0]]))
-# Step-4
+#
 fig = plt.figure()
 ax = fig.add_subplot(111, polar=True)
 ax.plot(angles, stats, 'o-', linewidth=2)
@@ -99,15 +96,15 @@ plt.title('Radar chart for the Mariana Trench \nStatistics on bathymetric profil
 ax.grid(True)
 ax.annotate('(E)', fontsize=18, xy=(1.02, .90), xycoords="axes fraction")
 plt.show()
-
-# Step-2. Show 6 different variables on radar chart: take them out and set as a np.array. 
-labels=np.array(['Median', 'Max', '1stQ', '3rdQ', 'Min', 'Mean'])
+#
+# show 6 different variables on radar chart: take them out and set as a np.array.
 stats=df.loc[18, labels].values
-# Step-3. close the plot
+#
+# close the plot
 angles=np.linspace(0, 2*np.pi, len(labels), endpoint=False)
 stats=np.concatenate((stats,[stats[0]]))
 angles=np.concatenate((angles,[angles[0]]))
-# Step-4
+#
 fig = plt.figure()
 ax = fig.add_subplot(111, polar=True)
 ax.plot(angles, stats, 'o-', linewidth=2)
@@ -120,15 +117,15 @@ plt.title('Radar chart for the Mariana Trench \nStatistics on bathymetric profil
 ax.grid(True)
 ax.annotate('(C)', fontsize=18, xy=(1.02, .90), xycoords="axes fraction")
 plt.show()
-
-# Step-2. Show 6 different variables on radar chart: take them out and set as a np.array.
-labels=np.array(['Median', 'Max', '1stQ', '3rdQ', 'Min', 'Mean'])
+#
+# show 6 different variables on radar chart: take them out and set as a np.array.
 stats=df.loc[23, labels].values
-# Step-3. close the plot
+#
+# close the plot
 angles=np.linspace(0, 2*np.pi, len(labels), endpoint=False)
 stats=np.concatenate((stats,[stats[0]]))
 angles=np.concatenate((angles,[angles[0]]))
-# Step-4
+#
 fig = plt.figure()
 ax = fig.add_subplot(111, polar=True)
 ax.plot(angles, stats, 'o-', linewidth=2)
@@ -141,10 +138,3 @@ plt.title('Radar chart for the Mariana Trench \nStatistics on bathymetric profil
 ax.grid(True)
 ax.annotate('(F)', fontsize=18, xy=(1.02, .90), xycoords="axes fraction")
 plt.show()
-
-
-# In[ ]:
-
-
-
-
